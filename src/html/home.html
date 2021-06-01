@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>home address</title>
+</head>
+<style>
+	body
+	{
+		background: url('../img/home.jpg' );
+	background-repeat :no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+</style>
+<body class="content"> 
+<div id ="navbar">
+  <a class="active" href="index.html">Home</a>
+  <a href="home.html">Contact</a>
+  <a href="aboutme.html">About</a>
+</div>
+<h2>Home</h2>
+<div>
+	<table >
+		<tr>
+			<td>Address </td>
+			<td colspan ="2">121 Alamgiriganj ,Bareilly</td>
+		</tr>
+
+		<tr>
+			<td>City </td>
+			<td>Bareilly</td>
+			<td>243005</td>
+		</tr>
+		<tr>
+			<td>State</td>
+			<td colspan="2">Uttar Pradesh</td>
+		</tr>
+		<tr>
+			<td>Phone no.</td>
+			<td colspan="2">9159280291</td>
+		</tr>
+	</table>
+
+</div>
+<br>
+<form> 
+  Username:<br> 
+  <input type="text" name="username" id="username" value="">  
+  <br> 
+  Skill:<br> 
+  <input type="text" name="Skill" id ="Skill" value=""> 
+  <br>
+  Enter Level:<br> 
+   <select id="level" value="Select Level">
+   	<!--option>Select level</option-->
+   	<option value="Beginner">Beginner</option>
+   	<option value="Intermediate">Intermediate</option>
+   	<option value="Proficient">Proficient </option>
+   </select>
+ <textarea rows ="4" cols="10" id="comment" value="">
+ </textarea> 
+  <br>
+  <br>
+  <button type="button" onclick="formdata()">Submit</button> 
+</form>
+<br>
+<br>
+<table id="my">
+  	<tr>
+  	<td>Name</td>
+  	<td>Skill</td>
+  	<td>Level</td>
+  	<td>Comment</td>
+  	 </tr>
+  	</table>
+  	<script>
+  		var tbin=document.getElementById("my");
+  		if(localStorage.getItem("maiank")===null)
+  			localStorage.setItem("maiank",tbin.innerHTML);
+  		else
+  			tbin.innerHTML=localStorage.getItem("maiank");
+	function formdata()
+	{
+		var r=tbin.insertRow(-1);
+		var c1=r.insertCell(0);
+		c1.innerHTML=document.getElementById("username").value;  
+		var c2=r.insertCell(1);
+		c2.innerHTML= document.getElementById("Skill").value; 
+		var c3=r.insertCell(2);
+		c3.innerHTML= document.getElementById("level").value;
+		var c4=r.insertCell(3);
+		c4.innerHTML= document.getElementById("comment").value;  
+		localStorage.removeItem("maiank");
+		localStorage.setItem("maiank",tbin.innerHTML);
+	}
+</script>
+</body>
+</html>

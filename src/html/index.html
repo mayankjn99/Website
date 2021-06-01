@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mayank.j@students.iiit.ac.in</title>
+		<meta charset="utf-8">
+	  	<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <style>
+body {
+  	margin: 0;
+  	font-size: 28px;
+  	font-family: Arial, Helvetica, sans-serif;
+  	background: url('../img/back.jpg' );
+	background-repeat :no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: orange;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+#navbar {
+  z-index:9999;	
+  overflow: hidden;
+  background-color: #333;
+  position:fixed;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+</style>
+</head>
+<body onload="counter_fn()"> 
+
+<div id ="navbar">
+  <a class="active" href="index.html">Home</a>
+  <a href="home.html">Contact</a>
+  <a href="aboutme.html">About</a>
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+		<div class="col-lg-8 col-md-8">
+			<div class="d-flex flex-column">
+				<div class="p-5 bg-dark text-white">
+					<div class="d-flex flex-row justify-content-between align-items-center">
+						<h1> Mayank Jain</h1>	
+						<a href="https://www.facebook.com/profile.php?id=100009710381163" target="_blank" class="contact-details"> <div> <i class="fa fa-facebook"></i> </div> </a>
+						<a id='profile-link' href="https://github.com/mayankjn99" target="_blank" class="contact-details"> <div> <i class="fa fa-github"></i> </div> </a>
+						<a href="https://www.linkedin.com/in/mayank-jain-46423818b/" target="_blank" class="contact-details"><div> <i class="fa fa-linkedin"></i> </div></a>
+						<a href="https://www.instagram.com/mayankjain550/" target="_blank" class="contact-details"><div> <i class="fa fa-instagram"></i> </div></a>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+
+ <div>
+    <p>The number of visitors is : <span id="cntr"></span></p>
+  </div>
+<script>
+	var count;
+    function counter_fn(){
+       var counter = localStorage.getItem("cntr");
+       count = Number(counter);
+       count += 1;
+       document.getElementById("cntr").innerHTML = count;
+       localStorage.setItem("cntr",count);
+    }
+ </script>
+ <h3>To view images</h3>
+ <img alt=img src="../img/I1.jpeg" id="image" onclick ="changeImage()">
+ <script>
+	var i=0;
+	var imgs = ["../img/I1.jpeg","../img/4.jpeg", "../img/5.jpeg", "../img/background.jpeg","../img/5.jpg"];
+	  function changeImage()
+      {
+        i++;
+        if( i >= imgs.length)
+        {
+          i = 0;
+        }
+        let obj = document.getElementById("image");
+        obj.src=imgs[i];
+      }
+		</script>
+	<br>
+	<br>
+	hello my name is mayank jain.
+	<br>
+	currently studing in IIIT hyderabad <br>
+
+<p>
+	<h4>Random article</h4>
+	 text file (sometimes spelled textfile; an old alternative name is flatfile) is a kind of computer file that is structured as a sequence of lines of electronic text. A text file exists stored as data within a computer file system. In operating systems such as CP/M and MS-DOS, where the operating system does not keep track of the file size in bytes, the end of a text file is denoted by placing one or more special characters, known as an end-of-file marker, as padding after the last line in a text file. On modern operating systems such as Microsoft Windows and Unix-like systems, text files do not contain any special EOF character, because file systems on those operating systems keep track of the file size in bytes. There are for most text files a need to have end-of-line delimiters, which are done in a few different ways depending on operating system. Some operating systems with record-orientated file systems may not use new line delimiters and will primarily store text files with lines separated as fixed or variable length records.
+<br>
+"Text file" refers to a type of container, while plain text refers to a type of content. 
+
+</p>
+<script>
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+window.onscroll = function() {
+	myFunction()};
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky");
+    alert(d);
+  } else {
+    navbar.classList.remove("sticky");
+  }
+//  scrollFunction();
+}
+// for scroll up
+var mybutton = document.getElementById("myBtn");
+//Get the button
+// var mybutton = document.getElementById("myBtn");
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+	var mybutton = document.getElementById("myBtn");
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+	
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+</script>
+
+</body>
+</html>
